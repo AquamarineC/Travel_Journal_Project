@@ -1,13 +1,17 @@
 
-export default function Jokes(props){
+import jokesData from "../jokesData"
+
+export default function Jokes(){  
 
     return(
-        <>
-            
-            {props.setup? <p>{props.setup}</p> : <p>This line has no setup</p>}
-            <p className="border">{props.punchline}</p>
-            <hr />
-        </> 
+        jokesData.map((jokedata)=>{
+            return(
+            <>
+                <h1>{jokedata.setup}</h1>
+                <p>{jokedata.punchline}</p>
+            </>
+            )
+        })
     )
 
 }
